@@ -6,16 +6,16 @@ import NavBar from './NavBar';
 import BookList from '../pages/BookList';
 
 function App() {
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   fetch('/api/me')
-  //     .then(r => {
-  //       if (r.ok) {
-  //         r.json().then(userObj => setUser(userObj));
-  //       }
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('/api/me')
+      .then(r => {
+        if (r.ok) {
+          r.json().then(userObj => setUser(userObj));
+        }
+      });
+  }, []);
 
   // const [users, setUsers] = useState([]);
 
@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="App">
       {/* {displayUsers} */}
-      {/* <NavBar setUser={setUser} /> */}
+      <NavBar setUser={setUser} />
       <Switch>
         <Route path="/">
           <BookList />
