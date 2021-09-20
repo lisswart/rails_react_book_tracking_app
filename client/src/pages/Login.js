@@ -7,7 +7,7 @@ function Login({ onLogin }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
-    <div>
+    <div className="login">
       <h1>Bookshelf</h1>
       {
         showLogin

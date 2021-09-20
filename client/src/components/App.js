@@ -49,13 +49,13 @@ function App() {
   return (
     <div className="App">
       {/* {displayUsers} */}
-      <NavBar setUser={setUser} />
+      <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route path="/new">
           <NewBook user={user} />
         </Route>
         <Route path="/">
-          <BookList />
+          <BookList user={user} />
         </Route>
       </Switch>
     </div>

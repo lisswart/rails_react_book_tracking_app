@@ -31,7 +31,7 @@ function LoginForm({ onLogin }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <label htmlFor="username">Username</label>
       <input
         type="text"

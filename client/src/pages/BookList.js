@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function BookList() {
+function BookList({ user }) {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -29,8 +29,10 @@ function BookList() {
   ))
 
   return (
-    <div>
-      {displayBooks}
+    <div className="booklist-wrapper">
+      <div className="booklist">
+        {displayBooks}
+      </div>
       <Link to="/new">Add New Book</Link>
     </div>
   );
