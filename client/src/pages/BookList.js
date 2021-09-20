@@ -14,22 +14,24 @@ function BookList() {
   }, []);
 
   const displayBooks = books.map(book => (
-    <article key={book.id}>
-      {book.title}, by {book.author}
-      <ul>
+    <article key={book.id} className="book">
+      <h3>{book.title}</h3>
+      <h4> by {book.author}</h4>
+      <p>{book.description}</p>
+      {/* <ul>
         {book.users.map(user => (
           <li key={user.id}>
             {user.username}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </article>
   ))
 
   return (
     <div>
       {displayBooks}
-      <Link to="/new"><button>Add another book</button></Link>
+      <Link to="/new">Add New Book</Link>
     </div>
   );
 }

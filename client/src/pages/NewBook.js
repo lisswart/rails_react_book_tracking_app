@@ -35,9 +35,9 @@ function NewBook({ user }) {
 
   return (
     <div>
-      <div>
+      <div className="new-book">
         <h2>Add Book</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -77,7 +77,6 @@ function NewBook({ user }) {
         <h1>{title}</h1>
         <h3>{author}</h3>
         <p>{description}</p>
-        <cite>added by {user.username}</cite>
       </div>
     </div>
   );

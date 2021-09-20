@@ -17,7 +17,7 @@ function NavBar({ setUser }) {
       <h1>
         <Link to="/">Bookshelf</Link>
       </h1>
-      <nav>
+      <nav className="nav">
         <Link to="/new">
           Add New Book
         </Link>
