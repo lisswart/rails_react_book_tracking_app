@@ -5,6 +5,7 @@ import '../styles/App.css';
 import NavBar from './NavBar';
 import BookList from '../pages/BookList';
 import Login from '../pages/Login';
+import NewBook from '../pages/NewBook';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -50,6 +51,9 @@ function App() {
       {/* {displayUsers} */}
       <NavBar setUser={setUser} />
       <Switch>
+        <Route path="/new">
+          <NewBook user={user} />
+        </Route>
         <Route path="/">
           <BookList />
         </Route>

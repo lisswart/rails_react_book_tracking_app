@@ -29,6 +29,7 @@ function BookList() {
   return (
     <div>
       {displayBooks}
+      <Link to="/new"><button>Add another book</button></Link>
     </div>
   );
 }
