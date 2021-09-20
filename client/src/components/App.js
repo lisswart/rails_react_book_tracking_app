@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import '../styles/App.css';
 import NavBar from './NavBar';
 import BookList from '../pages/BookList';
+import Login from '../pages/Login';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -42,7 +43,7 @@ function App() {
   //   </article>
   // ));
 
-  // if (!user) return <Login onLogin={setUser} />;
+  if (!user) return <Login onLogin={setUser} />;
   
   return (
     <div className="App">
