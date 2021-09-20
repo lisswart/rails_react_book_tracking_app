@@ -2,17 +2,44 @@ import { useEffect, useState } from 'react';
 import '../styles/App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [user, setUser] = useState(null);
+
+  // useEffect(() => {
+  //   fetch('/api/me')
+  //     .then(r => {
+  //       if (r.ok) {
+  //         r.json().then(userObj => setUser(userObj));
+  //       }
+  //     });
+  // }, []);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("/hello")
+    fetch('/api/users')
       .then(r => r.json())
-      .then(data => setCount(data.count));
+      .then(usersArr => {
+        console.log(usersArr);
+        setUsers(usersArr);
+      })
   }, []);
 
+  const displayUsers = users.map(user => (
+    <article key={user.id}>
+      {user.firstname} {user.lastname}
+      <ul>
+        {user.books.map(book => (
+          <li key={book.id}>
+            {book.title},  {book.author}
+            <p>{book.description}</p>
+          </li>
+        ))}
+      </ul>
+    </article>
+  ))
+  
   return (
     <div className="App">
-      <h1>Page Count: {count}</h1>
+      {displayUsers}
     </div>
   );
 }
