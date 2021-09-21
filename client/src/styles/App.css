@@ -18,7 +18,6 @@ body {
 }
 
 .nav {
-  background-color: cornflowerblue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,12 +29,12 @@ body {
 
 a {
   line-height: 1.75;
-  padding: 1rem;
+  padding: 0.15rem 1rem;
   text-decoration: none;
   color: chocolate;
   background-color: floralwhite;
-  border-radius: 6px;
-  border: 5px solid cornflowerblue;
+  border-radius: 16px;
+  /* border: 5px solid cornflowerblue; */
 }
 
 a:hover {
@@ -96,10 +95,18 @@ button {
 
 input {
   line-height: 1.75;
-  padding: 0.25rem;
+  padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 6px;
-  outline: none;
+  border: none;
+  background-color: antiquewhite;
+}
+
+textarea {
+  background-color: antiquewhite;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
 }
 
 .login {
@@ -108,6 +115,7 @@ input {
   border-radius: 6px;
 }
 
-.edit {
+.edit > label {
   min-width: 700px;
+  color: black;
 }

@@ -18,10 +18,11 @@ class Api::BooksController < ApplicationController
 
   def update
     book = Book.find(params[:id])
-    user = User.find(session[:id])
-    book_user = BookUser.find_by(user_id: user.id, book_id: book.id)
-    book_user.update(book_user_params)
-    render json: book_user
+    # user = User.find(session[:id])
+    # book_user = BookUser.find_by(user_id: user.id, book_id: book.id)
+    # book_user.update(book_user_params)
+    book.update(title: params[:title], author: params[:author], description: params[:description])
+    render json: book
   end
 
   def destroy
@@ -29,6 +30,7 @@ class Api::BooksController < ApplicationController
     user = User.find(session[:user_id])
     book_user = BookUser.find_by(user_id: user.id, book_id: book.id)
     book_user.destroy
+    book.destroy
     head :no_content
   end
 

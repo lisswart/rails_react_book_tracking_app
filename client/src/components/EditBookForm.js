@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function EditBookForm() {
+function EditBookForm({ isOnEdit, setIsOnEdit, book }) {
 
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -10,7 +10,8 @@ function EditBookForm() {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch('api/books/:id', {
+    setIsOnEdit(!isOnEdit);
+    fetch(`api/books/${book.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -51,7 +52,13 @@ function EditBookForm() {
         value={description}
         onChange={e => setDescription(e.target.value)}
       />
-      <button>Submit</button>
+      <button type="submit">
+        {
+          isLoading
+          ? "Loading..."
+          : "Submit"
+        }
+      </button>
     </form>
   )
 }

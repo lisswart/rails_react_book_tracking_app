@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 function NewBook() {
   const [title, setTitle] = useState("");
@@ -59,7 +59,9 @@ function NewBook() {
             rows="10"
             onChange={e => setDescription(e.target.value)}
           />
-          <button type="submit">
+          <button type="submit"
+            style={{backgroundColor: "transparent", border: "1px solid antiquewhite", color: "cornsilk"}}
+          >
             {
               isLoading
               ? "Loading..."
