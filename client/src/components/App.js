@@ -6,6 +6,7 @@ import NavBar from './NavBar';
 import BookList from '../pages/BookList';
 import Login from '../pages/Login';
 import NewBook from '../pages/NewBook';
+import EditBookForm from './EditBookForm';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -19,40 +20,17 @@ function App() {
       });
   }, []);
 
-  // const [users, setUsers] = useState([]);
-
-  // useEffect(() => {
-  //   fetch('/api/users')
-  //     .then(r => r.json())
-  //     .then(usersArr => {
-  //       console.log(usersArr);
-  //       setUsers(usersArr);
-  //     })
-  // }, []);
-
-  // const displayUsers = users.map(user => (
-  //   <article key={user.id}>
-  //     {user.firstname} {user.lastname}
-  //     <ul>
-  //       {user.books.map(book => (
-  //         <li key={book.id}>
-  //           {book.title},  {book.author}
-  //           <p>{book.description}</p>
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   </article>
-  // ));
-
   if (!user) return <Login onLogin={setUser} />;
   
   return (
     <div className="App">
-      {/* {displayUsers} */}
       <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route path="/new">
-          <NewBook user={user} />
+          <NewBook />
+        </Route>
+        <Route path="/edit-book">
+          <EditBookForm user={user} />
         </Route>
         <Route path="/">
           <BookList user={user} />

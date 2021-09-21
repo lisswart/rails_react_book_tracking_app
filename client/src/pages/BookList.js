@@ -13,28 +13,31 @@ function BookList({ user }) {
       });
   }, []);
 
-  const displayBooks = books.map(book => (
-    <article key={book.id} className="book">
-      <h3>{book.title}</h3>
-      <h4> by {book.author}</h4>
-      <p>{book.description}</p>
-      {/* <ul>
-        {book.users.map(user => (
-          <li key={user.id}>
-            {user.username}
-          </li>
-        ))}
-      </ul> */}
-    </article>
-  ))
-
-  return (
-    <div className="booklist-wrapper">
-      <div className="booklist">
-        {displayBooks}
+  if (user.books) {
+    const displayBooks = books.map(book => (
+      <article key={book.id} className="book">
+        <h3>{book.title}</h3>
+        <h4> by {book.author}</h4>
+        <p>{book.description}</p>
+        <button style={{backgroundColor: "green", color: "cornsilk", marginRight: 10}}>edit</button>
+        <button style={{backgroundColor: "red", color: "cornsilk"}}>delete</button>
+      </article>
+    ));
+    return (
+      <div className="booklist-wrapper">
+        <div className="booklist">
+          {
+            user.books
+            ? displayBooks
+            : <></>
+          }
+        </div>
+        <Link to="/new">Add New Book</Link>
       </div>
-      <Link to="/new">Add New Book</Link>
-    </div>
+    );
+  }
+  return (
+    <></>
   );
 }
 

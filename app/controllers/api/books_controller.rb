@@ -5,9 +5,9 @@ class Api::BooksController < ApplicationController
   end
 
   def create
-    book = Book.create(title: params[:title], author: params[:author])
+    book = Book.create(title: params[:title], author: params[:author], description: params[:description])
     user = User.find(session[:user_id])
-    book_user = BookUser.create(book_user_params)
+    book_user = BookUser.create(user_id: user.id, book_id: book.id)
     render json: book, status: :created
   end
 
@@ -34,7 +34,7 @@ class Api::BooksController < ApplicationController
 
   private
   
-  def book_user_params
-    params.permit(:read_status, :description, :notes, :review, :tag, :is_notes_added)
-  end
+  # def book_user_params
+  #   params.permit(:read_status, :description, :notes, :review, :tag, :is_notes_added)
+  # end
 end

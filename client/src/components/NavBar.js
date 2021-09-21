@@ -20,7 +20,7 @@ function NavBar({ setUser, user }) {
       <h5>Welcome, {user.username}</h5>
       <nav className="nav">
         <Link to="/new">
-          Add New Book
+          Add Book
         </Link>
         <button onClick={handleLogoutClick}>
           Logout

@@ -4,11 +4,12 @@ body {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .App {
-  background-color: darkslateblue;
-  padding: 2rem;
+  background: linear-gradient(darkslateblue, cornflowerblue);
+  padding: 0 2rem 2rem;
   max-width: 880px;
   border: 1px solid rebeccapurple;
   border-radius: 15px;
@@ -18,7 +19,7 @@ body {
 }
 
 .nav {
-  background-color: rgb(58, 31, 131);
+  background-color: cornflowerblue;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -34,6 +35,7 @@ a {
   color: rebeccapurple;
   background-color: floralwhite;
   border-radius: 6px;
+  border: 5px solid cornflowerblue;
 }
 
 a:hover {
@@ -41,13 +43,14 @@ a:hover {
 }
 
 .header {
-  background-color: dimgrey;
-  padding: 0 2rem;
-  border-radius: 10px;
+  background-color: lavenderblush;
+  padding: 1.5rem 2rem 0;
+  /* border-radius: 10px; */
   width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .booklist-wrapper {
@@ -60,22 +63,28 @@ article.book {
   margin: 1em;
   padding: 1rem 2rem;
   border-radius: 10px;
-  background-color: dimgrey;
+  background-color: lavenderblush;
+  color: darkslategrey;
 }
 
 h4 {
-  color: orange;
+  color: red;
 }
 
 .new-book {
   display: flex;
   flex-direction: column;
-  min-width: 800px;
+  min-width: 700px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+}
+
+.form > label {
+  color: cornsilk;
 }
 
 button {
@@ -91,10 +100,15 @@ input {
   padding: 0.25rem;
   margin-bottom: 1rem;
   border-radius: 6px;
+  outline: none;
 }
 
 .login {
   padding: 2rem;
   background-color: darkslateblue;
   border-radius: 6px;
+}
+
+.edit {
+  min-width: 700px;
 }

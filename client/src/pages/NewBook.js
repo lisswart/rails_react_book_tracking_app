@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function NewBook({ user }) {
+function NewBook() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
@@ -36,7 +36,7 @@ function NewBook({ user }) {
   return (
     <div>
       <div className="new-book">
-        <h2>Add Book</h2>
+        <h2 style={{color: "cornsilk"}}>Add Book</h2>
         <form onSubmit={handleSubmit} className="form">
           <label htmlFor="title">Title</label>
           <input
