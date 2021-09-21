@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { useHistory } from 'react-router-dom';
 
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -6,6 +7,7 @@ function LoginForm({ onLogin }) {
 
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  // let history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,6 +26,7 @@ function LoginForm({ onLogin }) {
         setIsLoading(false);
         if (r.ok) {
           r.json().then(userObj => onLogin(userObj));
+          // history.push("/api/me");
         } else {
           r.json().then(err => setErrors(err.errors));
         }

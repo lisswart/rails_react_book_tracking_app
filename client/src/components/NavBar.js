@@ -22,7 +22,9 @@ function NavBar({ setUser, user }) {
         <Link to="/new">
           Add Book
         </Link>
-        <button onClick={handleLogoutClick}>
+        <button onClick={handleLogoutClick}
+          style={{backgroundColor: "floralwhite", color: "chocolate"}}
+        >
           Logout
         </button>
       </nav>

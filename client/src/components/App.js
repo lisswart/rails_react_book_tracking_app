@@ -29,9 +29,6 @@ function App() {
         <Route path="/new">
           <NewBook />
         </Route>
-        <Route path="/edit-book">
-          <EditBookForm user={user} />
-        </Route>
         <Route path="/">
           <BookList user={user} />
         </Route>
